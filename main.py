@@ -30,11 +30,13 @@ from telethon import TelegramClient, events
 from telethon.errors import InviteHashInvalidError, ChatIdInvalidError
 
 wallet_address = ""
+TELEGRAM_BOT_TOKEN = "" #create a new bot using botfather from telegram and paste the bot code here
+TELEGRAM_USER_ID = "" #get from userinfobot on telegram
 solana_endpoint="https://api.mainnet-beta.solana.com"
 token_mint_data = {}
-api_id = ""
-api_hash = ""
-CHAT_IDENTIFIER = 'https://t.me/NiggaHelpline'
+api_id = "" #add your telegram api id here get the id and hash from me.telegram.org
+api_hash = "" 
+CHAT_IDENTIFIER = '' #write the  telegram invite link or the username of channel or chatid here
 
 def create_telegram_frame(parent, initial_chat_identifier=CHAT_IDENTIFIER):
     """
@@ -1098,8 +1100,6 @@ fetch_btn.grid(row=len(labels)+4, column=1, columnspan=2, pady=5)
 def send_telegram_call(buying_price,current_price,token_name):
     print("Telegram call triggered")
 
-    TELEGRAM_BOT_TOKEN = "8066450400:AAENAonrvuB7lNXnGqZbe5jdEXxF5zYiP5g"
-    TELEGRAM_USER_ID = "5249408527"
     try:
         buy_price = float(buying_price)
         current_price = float(current_price)
