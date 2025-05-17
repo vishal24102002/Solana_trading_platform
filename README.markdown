@@ -75,6 +75,9 @@ Before setting up the platform, ensure you have the following:
 
 ## Screenshots
 
+![image](https://github.com/user-attachments/assets/5608e6c9-094e-472f-a2d9-300e82ea9bd2)
+
+
 \
 *Main interface showing price tracking, wallet info, and Telegram integration.*
 
