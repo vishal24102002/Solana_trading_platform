@@ -99,5 +99,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 For support or inquiries, reach out via:
 
-- Email: yourname@example.com
+- Email: vishalsharma659615@gmail.com
 - GitHub Issues: Open an Issue
