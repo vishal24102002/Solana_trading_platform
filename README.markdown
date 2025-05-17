@@ -103,6 +103,10 @@ If any required environment variables are missing, the script will raise a `Valu
 ## Usage
 
 ### Main Interface
+
+
+
+
 - **Sidebar**:
   - **Settings**: Currently a placeholder button (⚙️).
   - **Automation Checkbox**: Enable to start automatic profit calculation and selling triggers.
