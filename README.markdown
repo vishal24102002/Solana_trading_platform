@@ -52,7 +52,7 @@ git clone <repository-url>
 cd vireonix-trading-platform
 ```
 
-### 2. Create a `.env` File
+### 2. Edit the below variables directrly in code 
 In the project root directory, create a file named `.env` and add the following environment variables. Replace the placeholder values with your actual credentials:
 
 ```
@@ -175,5 +175,3 @@ Feel free to submit issues or pull requests to improve the project. Focus areas 
 - Enhancing the GUI with additional features (e.g., portfolio tracking).
 - Improving error handling and user feedback.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
