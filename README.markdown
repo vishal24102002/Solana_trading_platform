@@ -100,6 +100,10 @@ If you don’t have a `requirements.txt` file, you can create one with the depen
 
 If any required environment variables are missing, the script will raise a `ValueError` with a message indicating the missing variable. Check your `.env` file and ensure all variables are set correctly.
 
+## Screenshot
+
+<img src="/sol_tracker.jpg" style="max-width: 100%; height: 300px; margin-bottom: 40px;">
+
 ## Usage
 
 ### Main Interface
