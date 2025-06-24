@@ -102,7 +102,7 @@ If any required environment variables are missing, the script will raise a `Valu
 
 ## Screenshot
 
-<img src="/sol_tracker.jpg" style="max-width: 100%; height: 300px; margin-bottom: 40px;">
+<center><img src="/sol_tracker.jpg" style="max-width: 100%; height: 300px; margin-bottom: 40px;"></center>
 
 ## Usage
 
