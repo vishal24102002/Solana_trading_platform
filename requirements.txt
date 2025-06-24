@@ -1,1 +1,12 @@
 python-dotenv
+customtkinter 
+matplotlib 
+pillow 
+requests 
+solana 
+solders 
+jupiter-python-sdk 
+sqlite3 
+telethon 
+twilio 
+solanatracker 
