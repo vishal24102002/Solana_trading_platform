@@ -1121,8 +1121,8 @@ def send_telegram_call(buying_price,current_price,token_name):
                     print("Telegram message sent!")
                 else:
                     print("Failed to send Telegram message.")
-                account_sid = 'ACc23cfa01e4de6125f782eafb3b48091b'
-                auth_token = '9FDVDU4NWZKFNC4WLM4ZYFD5'
+                account_sid = 'ACcv2i3schfa0r1mea4de6125f782eafb3b48091b'
+                auth_token = '9sFHDaVRDmUA4NWZKFNC4WLM4ZYFD5'
                 client = Client(account_sid, auth_token)
 
                 call = client.calls.create(
