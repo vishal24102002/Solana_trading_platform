@@ -361,7 +361,7 @@ def get_phantom_wallet_tokens() -> List[Dict[str, Any]]:
         try:
             token_accounts_response = client.get_token_accounts_by_owner(
                 wallet_pubkey,
-                TokenAccountOpts(program_id= Pubkey.from_string("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"))
+                TokenAccountOpts(program_id= Pubkey.from_string("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VlQa5hDsAilv"))
             )
             token_accounts = token_accounts_response.value
         except Exception as e:
