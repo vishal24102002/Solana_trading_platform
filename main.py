@@ -1,42 +1,45 @@
-from datetime import datetime
-import threading
-from customtkinter import CTkImage
-from solana.publickey import PublicKey
-import matplotlib.pyplot as plt
+from telethon.errors import InviteHashInvalidError, ChatIdInvalidError
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from io import BytesIO
-from typing import List, Tuple
-from tkinter import ttk
-from PIL import Image, ImageTk, ImageDraw
-import customtkinter as ctk
-from twilio.rest import Client
-from solders.signature import Signature
-from solana.rpc.async_api import AsyncClient
 from solana.rpc.api import Client as SyncClient
 from jupiter_python_sdk.jupiter import Jupiter
-import sqlite3
-import os
+from solana.rpc.types import TokenAccountOpts
+from solana.rpc.async_api import AsyncClient
+from telethon import TelegramClient, events
+from PIL import Image, ImageTk, ImageDraw
+from solders.signature import Signature
+from solanatracker import SolanaTracker
+from solana.publickey import PublicKey
+from solders.keypair import Keypair
+from typing import List, Dict, Any
+from customtkinter import CTkImage
 from solana.rpc.api import Client
 from solders.pubkey import Pubkey
+import matplotlib.pyplot as plt
+from typing import List, Tuple
+from dotenv import load_dotenv
+from twilio.rest import Client
+from datetime import datetime
+import customtkinter as ctk
+from tkinter import ttk
+from io import BytesIO
+import threading
 import requests
-from solana.rpc.types import TokenAccountOpts
-import json
-from typing import List, Dict, Any
-from solders.keypair import Keypair
-from solanatracker import SolanaTracker
 import asyncio
+import sqlite3
 import time
-from telethon import TelegramClient, events
-from telethon.errors import InviteHashInvalidError, ChatIdInvalidError
+import json
+import os
 
-wallet_address = ""
-TELEGRAM_BOT_TOKEN = "" #create a new bot using botfather from telegram and paste the bot code here
-TELEGRAM_USER_ID = "" #get from userinfobot on telegram
-solana_endpoint="https://api.mainnet-beta.solana.com"
+load_dotenv()
+
+wallet_address = os.getenv("wallet_address")
+TELEGRAM_BOT_TOKEN = os.getenv("") #create a new bot using botfather from telegram and paste the bot code here
+TELEGRAM_USER_ID = os.getenv("") #get from userinfobot on telegram
+solana_endpoint=os.getenv("solana_endpoint")
 token_mint_data = {}
-api_id = "" #add your telegram api id here get the id and hash from me.telegram.org
-api_hash = "" 
-CHAT_IDENTIFIER = '' #write the  telegram invite link or the username of channel or chatid here
+api_id = os.getenv("api_id") #add your telegram api id here get the id and hash from me.telegram.org
+api_hash = os.getenv("api_hash") 
+CHAT_IDENTIFIER = os.getenv('CHAT_IDENTIFIER') #write the  telegram invite link or the username of channel or chatid here
 
 def create_telegram_frame(parent, initial_chat_identifier=CHAT_IDENTIFIER):
     """
@@ -233,7 +236,7 @@ def get_token_name_price(contractor: str):
         return token_mint_data[contractor]
 
     # If not in cache, fetch from API
-    url = f"https://crimson-ancient-market.solana-mainnet.quiknode.pro/7b1dfa5a6af169b6c5b4146aa362be45238935b5/addon/912/networks/solana/tokens/{contractor}"
+    url = f"https://crimson-ancient-market.solana-mainnet.quiknode.pro/7b1dfa5a6af169b6c5bv4i1s4h6aala362be45238935b5/addon/912/networks/solana/tokens/{contractor}"
     print("api_called")
     try:
         response = requests.get(url, timeout=10)
