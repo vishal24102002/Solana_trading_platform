@@ -1,108 +1,120 @@
-# Vireonix Trading Platform
+# 💱 Solana Trading Platform
 
-## Overview
+A simple crypto trading simulation platform built using Flask and Python, powered by real-time price data from CoinGecko and historical data from MongoDB.
 
-The Vireonix Trading Platform is a Python-based application designed for trading tokens on the Solana blockchain. It provides a graphical user interface (GUI) built with CustomTkinter, integrates with the Solana blockchain for wallet management and token swaps, and supports real-time Telegram notifications for trading updates. The application also includes features for tracking token prices, calculating profits, and performing manual or automated trades.
+---
 
-Key features include:
-- Fetching token balances from a Solana wallet (e.g., Phantom wallet).
-- Displaying live token price graphs using Matplotlib.
-- Performing token swaps via SolanaTracker.
-- Sending Telegram notifications with Twilio calls for price alerts.
-- Storing transaction history in a SQLite database.
-- Supporting automated profit calculation and selling triggers.
+## 📸 Demo
 
-## Prerequisites
+(/sol_tracker.jpg)
 
-- **Operating System**: Windows (tested on Windows with PyCharm)
-- **Python Version**: Python 3.8 or higher
-- **PyCharm**: Recommended IDE for running and debugging the project
-- **Solana Wallet**: A Solana wallet (e.g., Phantom) with a private key and address
-- **Telegram Account**: A Telegram bot token and channel ID for notifications
-- **Twilio Account**: For sending phone call notifications (optional)
+---
 
-## Dependencies
+## ⚙️ Features
 
-The project relies on several Python libraries. Install them using the following command in PyCharm's terminal or your command prompt:
+- 🔁 Real-time Solana price fetching via CoinGecko API
+- 🧮 Buy/Sell simulation with balance and holdings tracking
+- 🧾 Transaction history and P&L computation
+- 🧠 MongoDB integration for persistent trade data
+- 🌐 Flask-based web interface (or CLI interface depending on how it's run)
 
-```bash
-pip install customtkinter matplotlib pillow requests solana solders jupiter-python-sdk sqlite3 telethon twilio solanatracker python-dotenv
-```
+---
 
-### Required Libraries
-- `customtkinter`: For building the GUI.
-- `matplotlib`: For plotting live token price graphs.
-- `pillow`: For image processing (e.g., displaying token logos).
-- `requests`: For making HTTP requests to APIs.
-- `solana` and `solders`: For interacting with the Solana blockchain.
-- `jupiter-python-sdk`: For fetching token swap quotes on Solana.
-- `sqlite3`: For storing wallet and transaction data (built into Python).
-- `telethon`: For Telegram integration.
-- `twilio`: For sending phone call notifications.
-- `solanatracker`: For performing token swaps on Solana.
-- `python-dotenv`: For loading environment variables from a `.env` file.
+## 🧰 Tech Stack
 
-## Setup Instructions
+- 🐍 Python 3
+- ⚙️ Flask
+- 🍃 MongoDB (via PyMongo)
+- 🌐 CoinGecko API
+- 🧾 HTML/CSS (basic frontend)
 
-### 1. Clone the Repository
-Clone or download this project to your local machine.
+---
 
-```bash
-git clone <repository-url>
-cd vireonix-trading-platform
-```
+## 🏁 Getting Started
 
-### 2. Edit the below variables directrly in code 
-In the project root directory, create a file named `.env` and add the following environment variables. Replace the placeholder values with your actual credentials:
+### 🔧 Installation
 
-```
-SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token
-TELEGRAM_CHANNEL_ID=your_telegram_channel_id
-WALLET_PRIVATE_KEY=your_wallet_private_key
-WALLET_ADDRESS=your_wallet_address
-TELEGRAM_API_ID=your_telegram_api_id
-TELEGRAM_API_HASH=your_telegram_api_hash
-CHAT_IDENTIFIER=your_telegram_chat_identifier
-```
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/vishal24102002/Solana_trading_platform.git
+   cd Solana_trading_platform
+   ```
 
-- `SOLANA_RPC_URL`: Solana RPC endpoint (default: `https://api.mainnet-beta.solana.com`).
-- `TELEGRAM_BOT_TOKEN`: Token for your Telegram bot (e.g., `123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11`).
-- `TELEGRAM_CHANNEL_ID`: Your Telegram channel ID (e.g., `@MyTradingChannel` or `-1001234567890`).
-- `WALLET_PRIVATE_KEY`: Your Solana wallet private key (base58-encoded, keep it secure).
-- `WALLET_ADDRESS`: Your Solana wallet address (e.g., `9maR6hnACsxEVgbyjk7oBwft61jtQjKu4ZY1fuARo1CD`).
-- `TELEGRAM_API_ID`: Your Telegram API ID (obtained from https://my.telegram.org).
-- `TELEGRAM_API_HASH`: Your Telegram API hash (obtained from https://my.telegram.org).
-- `CHAT_IDENTIFIER`: Telegram chat identifier (e.g., `https://t.me/NiggaHelpline`, `@username`, or chat ID).
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # on Windows: venv\Scripts\activate
+   ```
 
-**Security Note**: Never share your `.env` file publicly, as it contains sensitive information. Add `.env` to your `.gitignore` file to prevent it from being tracked by Git.
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### 3. Install Dependencies
-Open the project in PyCharm and run the following command in the PyCharm terminal to install the required libraries:
+4. Set up your environment variables:
 
-```bash
-pip install -r requirements.txt
-```
+   Create a `.env` file in the root directory:
+   ```env
+   MONGO_URI=mongodb://localhost:27017/
+   DATABASE_NAME=solana_trader
+   ```
 
-If you don’t have a `requirements.txt` file, you can create one with the dependencies listed above, or install them individually as shown in the **Dependencies** section.
+5. Start the Flask app:
+   ```bash
+   python app.py
+   ```
 
-### 4. Configure PyCharm
-- Open the project in PyCharm.
-- Set up a Python interpreter if not already configured:
-  - Go to **File > Settings > Project > Python Interpreter**.
-  - Click the gear icon, then **Add Interpreter**, and select your Python installation or a virtual environment.
-- Ensure the `.env` file is in the project root directory and loaded correctly (the script uses `python-dotenv` to load it).
+---
 
-### 5. Run the Application
-- Open `main.py` in PyCharm.
-- Click the green "Run" button or press `Shift + F10` to run the script.
-- The application window will open, displaying the Vireonix Trading Platform GUI.
+## ⚠️ Note on Database Usage
 
-If any required environment variables are missing, the script will raise a `ValueError` with a message indicating the missing variable. Check your `.env` file and ensure all variables are set correctly.
+> ⚠️ Important:  
+This project uses **MongoDB** for data persistence. Ensure MongoDB is installed and running locally (`localhost:27017`) or update the connection string to use **MongoDB Atlas** or another cloud service.
 
-## Screenshot
+---
 
-<center><img src="/sol_tracker.jpg" style="max-width: 100%; height: 300px; margin-bottom: 40px;"></center>
+## 📦 Example Trade Flow
+
+1. View live Solana price.
+2. Buy/Sell based on your balance.
+3. Transactions are logged and stored in MongoDB.
+4. Track portfolio and profit/loss across sessions.
+
+---
+
+## 🧪 Testing
+
+If you'd like to test the transaction logic:
+
+- Run the app
+- Make mock trades
+- Inspect the `trades` collection in MongoDB via a GUI like [MongoDB Compass](https://www.mongodb.com/products/compass)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for more information.
+
+---
+
+## 🙋‍♂️ Contributing
+
+Contributions are welcome!  
+Feel free to fork the repository and submit a pull request.  
+For major changes, please open an issue first to discuss what you'd like to change.
+
+---
+
+## 🔗 API Reference
+
+- [CoinGecko API](https://www.coingecko.com/en/api)
+
+---
+
+[![View on GitHub](https://img.shields.io/badge/View_on-GitHub-24292e?style=for-the-badge&logo=github)](https://github.com/vishal24102002/Solana_trading_platform)
+
 
 ## Usage
 
@@ -176,10 +188,3 @@ If any required environment variables are missing, the script will raise a `Valu
 - **Private Key**: Store your wallet private key securely in the `.env` file or database. Never hardcode it in the script.
 - **Environment Variables**: Do not commit your `.env` file to version control. Add it to `.gitignore`.
 - **Twilio Credentials**: The current script hardcodes Twilio credentials in `send_telegram_call`. For better security, add them to the `.env` file as `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN`, and update the function to use `os.getenv()`.
-
-## Contributing
-Feel free to submit issues or pull requests to improve the project. Focus areas for improvement include:
-- Adding support for more blockchains.
-- Enhancing the GUI with additional features (e.g., portfolio tracking).
-- Improving error handling and user feedback.
-
