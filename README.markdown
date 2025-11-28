@@ -6,7 +6,7 @@ A simple crypto trading simulation platform built using Flask and Python, powere
 
 ## 📸 Demo
 
-(/sol_tracker.jpg)
+!["Sol_Tracker"](/sol_tracker.jpg)
 
 ---
 
