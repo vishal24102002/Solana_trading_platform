@@ -4,7 +4,7 @@ A simple crypto trading simulation platform built using Flask and Python, powere
 
 ---
 
-## 📸 Demo
+## Demo
 
 !["Sol_Tracker"](/sol_tracker.jpg)
 
@@ -12,27 +12,27 @@ A simple crypto trading simulation platform built using Flask and Python, powere
 
 ## ⚙️ Features
 
-- 🔁 Real-time Solana price fetching via CoinGecko API
-- 🧮 Buy/Sell simulation with balance and holdings tracking
-- 🧾 Transaction history and P&L computation
-- 🧠 MongoDB integration for persistent trade data
-- 🌐 Flask-based web interface (or CLI interface depending on how it's run)
+-  Real-time Solana price fetching via CoinGecko API
+-  Buy/Sell simulation with balance and holdings tracking
+-  Transaction history and P&L computation
+-  MongoDB integration for persistent trade data
+-  Flask-based web interface (or CLI interface depending on how it's run)
 
 ---
 
-## 🧰 Tech Stack
+##  Tech Stack
 
-- 🐍 Python 3
-- ⚙️ Flask
-- 🍃 MongoDB (via PyMongo)
-- 🌐 CoinGecko API
-- 🧾 HTML/CSS (basic frontend)
+-  Python 3
+-  Flask
+-  MongoDB (via PyMongo)
+-  CoinGecko API
+-  HTML/CSS (basic frontend)
 
 ---
 
-## 🏁 Getting Started
+##  Getting Started
 
-### 🔧 Installation
+###  Installation
 
 1. Clone the repo:
    ```bash
@@ -66,14 +66,14 @@ A simple crypto trading simulation platform built using Flask and Python, powere
 
 ---
 
-## ⚠️ Note on Database Usage
+##  Note on Database Usage
 
-> ⚠️ Important:  
+>  Important:  
 This project uses **MongoDB** for data persistence. Ensure MongoDB is installed and running locally (`localhost:27017`) or update the connection string to use **MongoDB Atlas** or another cloud service.
 
 ---
 
-## 📦 Example Trade Flow
+##  Example Trade Flow
 
 1. View live Solana price.
 2. Buy/Sell based on your balance.
@@ -82,7 +82,7 @@ This project uses **MongoDB** for data persistence. Ensure MongoDB is installed 
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 If you'd like to test the transaction logic:
 
@@ -92,14 +92,14 @@ If you'd like to test the transaction logic:
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.  
 See the [LICENSE](LICENSE) file for more information.
 
 ---
 
-## 🙋‍♂️ Contributing
+##  Contributing
 
 Contributions are welcome!  
 Feel free to fork the repository and submit a pull request.  
